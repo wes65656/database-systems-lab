@@ -6,7 +6,22 @@ O objetivo é observar como transações, isolamento, concorrência, índices e 
 
 > **Estado:** exercícios preparados e versionados, mas ainda não executados/validados neste ambiente. Resultados de desempenho não são inventados. Execute localmente para medir e verificar.
 
-## Experimentos
+## Laboratórios disponíveis
+
+Este repositório tem **dois ambientes independentes**. O laboratório original permanece na raiz, com seu próprio Docker e banco. O novo ambiente não substitui nenhum dos arquivos existentes.
+
+| Laboratório | Foco | Banco local |
+| --- | --- | --- |
+| **01 — Fundamentos** (raiz) | ACID, isolamento, concorrência, índices e particionamento didático | `database_lab` na porta `5433` |
+| **02 — E-commerce em escala** | 26 milhões de registros opcionais, consultas, otimização, partições mensais e comparações | `ecommerce_scale` na porta `5434` |
+
+➡️ **[Abrir o novo laboratório E-commerce Scale](labs/ecommerce-scale/README.md)**
+
+Comece com a carga pequena e só execute os 26 milhões de registros se quiser medir a escala completa e tiver recursos disponíveis.
+
+---
+
+## Experimentos do laboratório original
 
 | ID | Tema | Arquivo |
 | --- | --- | --- |
