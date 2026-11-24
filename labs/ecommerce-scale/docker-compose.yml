@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: ecommerce-scale-postgres
+    environment:
+      POSTGRES_USER: scale_lab
+      POSTGRES_PASSWORD: scale_dev_only
+      POSTGRES_DB: ecommerce_scale
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - ecommerce_scale_data:/var/lib/postgresql
+      - ./sql:/lab/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scale_lab -d ecommerce_scale"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+
+volumes:
+  ecommerce_scale_data:
