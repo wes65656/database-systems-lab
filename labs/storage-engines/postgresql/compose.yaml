@@ -1,0 +1,19 @@
+name: database-lab-storage-engines
+services:
+  db:
+    image: postgres:18-alpine
+    command: ["postgres", "-c", "full_page_writes=on"]
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_PASSWORD: storage_dev_only
+      POSTGRES_DB: storage_engines
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./sql:/lab/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lab -d storage_engines"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+volumes:
+  postgres_data:
