@@ -8,12 +8,13 @@ O objetivo é observar como transações, isolamento, concorrência, índices e 
 
 ## Laboratórios disponíveis
 
-Este repositório tem **dois ambientes independentes**. O laboratório original permanece na raiz, com seu próprio Docker e banco. O novo ambiente não substitui nenhum dos arquivos existentes.
+Os laboratórios usam ambientes independentes, com bancos e volumes Docker próprios. O laboratório original fica na raiz.
 
 | Laboratório | Foco | Banco local |
 | --- | --- | --- |
 | **01 — Fundamentos** (raiz) | ACID, isolamento, concorrência, índices e particionamento didático | `database_lab` na porta `5433` |
 | **02 — E-commerce em escala** | 26 milhões de registros opcionais, consultas, otimização, partições mensais e comparações | `ecommerce_scale` na porta `5434` |
+| **[03 — Storage Engines](labs/storage-engines/README.md)** | B-Tree, LSM-Tree, MVCC, VACUUM, WAL e checkpoints | `storage_engines` via Docker Compose |
 
 ➡️ **[Abrir o novo laboratório E-commerce Scale](labs/ecommerce-scale/README.md)**
 
@@ -181,6 +182,6 @@ docker compose down -v
 
 ## Próximos experimentos
 
-SERIALIZABLE, deadlocks, paginação por cursor, MVCC/VACUUM, WAL, backup, cargas read-heavy/write-heavy, replicação, sharding e comparação com NoSQL.
+SERIALIZABLE, deadlocks, paginação por cursor, backup, cargas read-heavy/write-heavy, replicação, sharding e comparação com NoSQL.
 
 A ideia é evoluir um experimento de cada vez. Commits representam etapas organizadas da publicação do laboratório, não registros cronológicos de desenvolvimento em dias anteriores.
