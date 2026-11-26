@@ -1,0 +1,19 @@
+name: database-lab-performance-diagnostics
+services:
+  db:
+    image: postgres:18-alpine
+    command: ["postgres", "-c", "shared_preload_libraries=pg_stat_statements", "-c", "track_io_timing=on"]
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_PASSWORD: performance_dev_only
+      POSTGRES_DB: performance_diagnostics
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./sql:/lab/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lab -d performance_diagnostics"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+volumes:
+  postgres_data:

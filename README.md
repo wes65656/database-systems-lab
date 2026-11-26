@@ -15,6 +15,7 @@ Os laboratórios usam ambientes independentes, com bancos e volumes Docker próp
 | **01 — Fundamentos** (raiz) | ACID, isolamento, concorrência, índices e particionamento didático | `database_lab` na porta `5433` |
 | **02 — E-commerce em escala** | 26 milhões de registros opcionais, consultas, otimização, partições mensais e comparações | `ecommerce_scale` na porta `5434` |
 | **[03 — Storage Engines](labs/storage-engines/README.md)** | B-Tree, LSM-Tree, MVCC, VACUUM, WAL e checkpoints | `storage_engines` via Docker Compose |
+| **[04 — Performance e diagnóstico](labs/performance-diagnostics/README.md)** | Planos, estimativas, ordenação, carga agregada e esperas por locks | `performance_diagnostics` via Docker Compose |
 
 ➡️ **[Abrir o novo laboratório E-commerce Scale](labs/ecommerce-scale/README.md)**
 
