@@ -187,3 +187,7 @@ docker compose down -v
 SERIALIZABLE, deadlocks, paginação por cursor, backup, cargas read-heavy/write-heavy, replicação, sharding e comparação com NoSQL.
 
 A ideia é evoluir um experimento de cada vez. Commits representam etapas organizadas da publicação do laboratório, não registros cronológicos de desenvolvimento em dias anteriores.
+
+### Distribuição de dados
+
+- [Lab 06 — Sharding e Consistent Hashing](labs/sharding/README.md): simulação de roteamento e rebalanceamento físico em cinco servidores PostgreSQL.
