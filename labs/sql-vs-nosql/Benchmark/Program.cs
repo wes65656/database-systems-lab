@@ -21,7 +21,7 @@ try
     {
         var schedule = Workload.Create(rows, operations, readPercent);
         // Alternate execution order to avoid always giving the same engine first-run conditions.
-        if (readPercent is 50 or 0) Array.Reverse(stores);
+        if (readPercent != 90) Array.Reverse(stores);
         foreach (var store in stores)
         {
             store.Reset();
@@ -123,9 +123,8 @@ sealed class PostgresStore : IStore, IDisposable
     public PostgresStore()
     {
         connection.Open();
-        using var cmd = new NpgsqlCommand("SET synchronous_commit = on; SHOW fsync", connection);
+        using var cmd = new NpgsqlCommand("SET synchronous_commit = on", connection);
         // Read the setting separately so multi-statement result semantics cannot mask it.
-        cmd.CommandText = "SET synchronous_commit = on";
         cmd.ExecuteNonQuery();
         cmd.CommandText = "SHOW fsync";
         if ((string?)cmd.ExecuteScalar() != "on") throw new InvalidOperationException("Expected fsync=on.");

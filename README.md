@@ -2,7 +2,7 @@
 
 Laboratório prático e reproduzível de **engenharia de bancos de dados**.
 
-O objetivo é observar como transações, isolamento, concorrência, índices e particionamento se comportam de verdade, com experimentos pequenos e independentes. Sem API, DDD, Clean Architecture ou SDD: apenas **PostgreSQL + Docker + Console C#/.NET 10**.
+O objetivo é observar como transações, isolamento, concorrência, índices e particionamento se comportam de verdade, com experimentos pequenos e independentes. Sem API, DDD, Clean Architecture ou SDD: **PostgreSQL, MongoDB, Docker e Console C#/.NET 10**.
 
 > **Estado:** exercícios preparados e versionados, mas ainda não executados/validados neste ambiente. Resultados de desempenho não são inventados. Execute localmente para medir e verificar.
 
@@ -16,6 +16,7 @@ Os laboratórios usam ambientes independentes, com bancos e volumes Docker próp
 | **02 — E-commerce em escala** | 26 milhões de registros opcionais, consultas, otimização, partições mensais e comparações | `ecommerce_scale` na porta `5434` |
 | **[03 — Storage Engines](labs/storage-engines/README.md)** | B-Tree, LSM-Tree, MVCC, VACUUM, WAL e checkpoints | `storage_engines` via Docker Compose |
 | **[04 — Performance e diagnóstico](labs/performance-diagnostics/README.md)** | Planos, estimativas, ordenação, carga agregada e esperas por locks | `performance_diagnostics` via Docker Compose |
+| **[05 — SQL versus NoSQL](labs/sql-vs-nosql/README.md)** | PostgreSQL e MongoDB: leitura por chave, atualização atômica e inserção em lote | `sql_nosql_lab` nas portas 5435 e 27018 |
 
 ➡️ **[Abrir o novo laboratório E-commerce Scale](labs/ecommerce-scale/README.md)**
 
